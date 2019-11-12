@@ -1,3 +1,0 @@
-# react-weather
-
-Hi

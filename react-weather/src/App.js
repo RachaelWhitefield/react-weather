@@ -16,6 +16,13 @@ const App = () => {
   });
   const{days, location, selectedDay, searchTerm} = data;
 
+  const setSelectedDay = day => {
+    setData({
+      ...data, // copy in the exitsting state so we don't lose it
+      selectedDay: day  // add our change on top of it
+    });
+  }
+
   return (
     <Container>
       <Row>
@@ -32,6 +39,8 @@ const App = () => {
             low={day.min_temp}
             icon={day.weather.icon}
             description={day.weather.description}
+            setSelectedDay={() => setSelectedDay(day)}
+            isActive={day === selectedDay}
          />
        ))}
       </Row>

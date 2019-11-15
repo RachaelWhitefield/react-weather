@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from "reactstrap"; 
+import moment from "moment";
 import SearchBar from "./components/SearchBar";
 import DayCard from "./components/DayCard";
 import DayDetails from "./components/DayDetails";
@@ -22,9 +23,17 @@ const App = () => {
         <Col md={4}><SearchBar /></Col>
       </Row>
       <Row>
-        <Col>
-          <DayCard /><DayCard />
-        </Col>
+       {days.map(day => (
+         <DayCard 
+            key={day.ts}
+            day={moment(day.valid_date, "YYYY-MM-DD").format("dddd")}
+            current={day.temp}
+            high={day.max_temp}
+            low={day.min_temp}
+            icon={day.weather.icon}
+            description={day.weather.description}
+         />
+       ))}
       </Row>
       <Row>
         <Col>

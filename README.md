@@ -6,3 +6,5 @@ Moment JS
 Reactstrap
 Bootstrap
 Styled-Components
+
+API used: Weatherbit

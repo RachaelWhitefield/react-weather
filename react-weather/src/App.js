@@ -46,7 +46,21 @@ const App = () => {
       </Row>
       <Row>
         <Col>
-          <DayDetails />
+          {selectedDay ? (
+               <DayDetails
+               day={moment(selectedDay.valid_date, "YYYY-MM-DD").format("dddd, MMMM Do, YYYY")}
+               current={selectedDay.temp}
+               high={selectedDay.max_temp}
+               low={selectedDay.min_temp}
+               icon={selectedDay.weather.icon}
+               description={selectedDay.weather.description}
+               windSpeed={selectedDay.wind_spd}
+               windDir={selectedDay.wind_cdir_full}
+               precip={selectedDay.pop}
+             />
+          ) : (
+            <h3>Click on a day above to get weather details!</h3>
+          )}
         </Col>
       </Row>
     </Container>

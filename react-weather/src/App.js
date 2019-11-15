@@ -8,16 +8,17 @@ import sampleData from "./data/sample.json";
 const App = () => {
   const [day, setDay] = useState("Monday");
   const [data, setData] = useState({
-    days: [],
+    days: sampleData.data,
     location: "Denver, CO",
     selectedDay: null,
     searchTerm: ""
   });
+  const{days, location, selectedDay, searchTerm} = data;
 
   return (
     <Container>
       <Row>
-        <Col md={8}><h1>Weather for {day}</h1></Col>
+        <Col md={8}><h1>Weather for {location}</h1></Col>
         <Col md={4}><SearchBar /></Col>
       </Row>
       <Row>

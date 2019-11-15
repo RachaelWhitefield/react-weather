@@ -2,7 +2,7 @@
 
 ## Created using:
 Axios
-Moment
+Moment JS
 Reactstrap
 Bootstrap
 Styled-Components

@@ -23,11 +23,28 @@ const App = () => {
     });
   }
 
+  const handleInputChange = event => {
+    setData({
+      ...data,
+      searchTerm: event.target.value
+    });
+  }
+
+  // Make sure the page doesn't refresh
+  const handleFormSubmit = event => {
+    event.preventDefault();
+  }
+
   return (
     <Container>
       <Row>
         <Col md={8}><h1>Weather for {location}</h1></Col>
-        <Col md={4}><SearchBar /></Col>
+        <Col md={4}><SearchBar 
+          searchTerm={searchTerm}
+          handleInputChange={handleInputChange}
+          handleFormSubmit={handleFormSubmit}
+        />
+        </Col>
       </Row>
       <Row>
        {days.map(day => (

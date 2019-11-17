@@ -7,7 +7,12 @@ const SearchBar = props => {
     <Form inline>
 	    <FormGroup>
 		    <Label for="searchTerm" hidden>Search by Location</Label>
-		    <Input type="text" name="searchTerm" id="searchTerm" placeholder="Address or zip" />
+            <Input 
+                type="text" 
+                name="searchTerm" 
+                id="searchTerm" 
+                placeholder="Address or zip" 
+                />
 	    </FormGroup>
 	<Button>Search</Button>
 </Form>

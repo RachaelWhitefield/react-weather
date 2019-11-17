@@ -23,6 +23,11 @@ const App = () => {
    getWeather("Denver, CO"); // can code this later to be user's current location.  2:58:38
   }, []);
 
+  // change the title of the page based on search term and change based on every search
+  useEffect(() => {
+    document.title = `This week's weather ${location ? "for " + location : ""}`;
+  }, [location]);
+
   const getWeather = city => {
     API.getWeather(city)
     .then(res => {

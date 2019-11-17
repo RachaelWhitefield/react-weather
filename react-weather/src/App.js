@@ -54,7 +54,7 @@ const App = () => {
   // Make sure the page doesn't refresh
   const handleFormSubmit = event => {
     event.preventDefault();
-    alert("submitting form");
+    getWeather(searchTerm);
   }
 
   return (

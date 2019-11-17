@@ -59,7 +59,11 @@ const App = () => {
   // Make sure the page doesn't refresh
   const handleFormSubmit = event => {
     event.preventDefault();
-    getWeather(searchTerm);
+    if (searchTerm) {
+      getWeather(searchTerm);
+    } else {
+      alert("You must type a city to search");
+    }
   }
 
   return (

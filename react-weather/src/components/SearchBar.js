@@ -12,9 +12,12 @@ const SearchBar = props => {
                 name="searchTerm" 
                 id="searchTerm" 
                 placeholder="Address or zip" 
+                value={props.searchTerm}
+                onChange={props.handleInputChange}
+
                 />
 	    </FormGroup>
-	<Button>Search</Button>
+	<Button onClick={props.handleFormSubmit}>Search</Button>
 </Form>
     )
 }

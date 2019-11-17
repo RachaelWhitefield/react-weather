@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from "reactstrap"; 
 import moment from "moment";
 import SearchBar from "./components/SearchBar";
@@ -33,6 +33,7 @@ const App = () => {
   // Make sure the page doesn't refresh
   const handleFormSubmit = event => {
     event.preventDefault();
+    alert("submitting form");
   }
 
   return (

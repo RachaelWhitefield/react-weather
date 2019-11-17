@@ -5,16 +5,37 @@ import SearchBar from "./components/SearchBar";
 import DayCard from "./components/DayCard";
 import DayDetails from "./components/DayDetails";
 import sampleData from "./data/sample.json";
+import API from "./utils/API";
 
 const App = () => {
   const [day, setDay] = useState("Monday");
   const [data, setData] = useState({
-    days: sampleData.data,
-    location: "Denver, CO",
+    days: [],
+    location: "",
     selectedDay: null,
     searchTerm: ""
   });
-  const{days, location, selectedDay, searchTerm} = data;
+  const{ days, location, selectedDay, searchTerm } = data;
+
+  // only on initial render, trigger getWeather with Denver, CO
+  useEffect(() => {
+    // write code that we want to execute at a certain part of the life cycle
+   getWeather("Denver, CO"); // can code this later to be user's current location.  2:58:38
+  }, []);
+
+  const getWeather = city => {
+    API.getWeather(city)
+    .then(res => {
+      console.log(res);
+      setData({
+        searchTerm: "",
+        selectedDay: null,
+        days: res.data.data,
+        location: res.data.city_name + ", " + res.data.state_code
+      })
+    })
+    .catch(err => console.log(err));
+  }
 
   const setSelectedDay = day => {
     setData({

@@ -16,7 +16,6 @@ const DayWrapper = styled.article`
 
 
 const DayCard = props => {
-    console.log(props);
     return (
         <Col onClick={props.setSelectedDay}>
             <DayWrapper isActive={props.isActive}>

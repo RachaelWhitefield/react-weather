@@ -5,9 +5,9 @@ import styled from "styled-components";
 
 const SearchBar = props => {
     return (
-        <Form inline onSubmit={props.handleFormSubmit}>
+        <Form inline onSubmit={props.handleFormSubmit} style={{marginLeft:"80px"}}>
 	        <FormGroup>
-		        <Label for="searchTerm" hidden>Search by Location</Label>
+		        <Label for="searchTerm" hidden >Search by Location</Label>
                 <Input 
                     type="text" 
                     name="searchTerm" 

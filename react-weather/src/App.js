@@ -4,7 +4,7 @@ import moment from "moment";
 import SearchBar from "./components/SearchBar";
 import DayCard from "./components/DayCard";
 import DayDetails from "./components/DayDetails";
-import sampleData from "./data/sample.json";
+// import sampleData from "./data/sample.json";
 import API from "./utils/API";
 
 const App = () => {

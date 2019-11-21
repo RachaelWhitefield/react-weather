@@ -17,7 +17,10 @@ const SearchBar = props => {
                     onChange={props.handleInputChange}
                 />
 	        </FormGroup>
-	            <Button style={{backgroundColor:"#000"}} onClick={props.handleFormSubmit}>Search</Button>
+                <Button 
+                style={{backgroundColor:"#000"}} 
+                onClick={props.handleFormSubmit}
+                >Search</Button>
         </Form>
     )
 }

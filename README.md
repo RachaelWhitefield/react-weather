@@ -1,7 +1,7 @@
 # React Weather App
 
 ### Link to deployed site:
-https://rachaelwhitefield.github.io/react-weather/
+
 
 ## Created using:
 ```
